@@ -14,11 +14,14 @@ streamlit.text('🥑🍞 Avocado Toast')
 
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-#multiselect function
-streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
+
 
 #adding the table
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
+
+#multiselect function
+streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
+
 streamlit.dataframe(my_fruit_list)
 
 
