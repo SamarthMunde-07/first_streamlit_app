@@ -1,6 +1,8 @@
 
 import streamlit
 import pandas
+import snowflake.connector
+
 
 streamlit.title('My parents new healthy diner')
 
@@ -45,4 +47,3 @@ streamlit.dataframe(fruityvice_normalized)
 
 
 
-import snowflake.connector
