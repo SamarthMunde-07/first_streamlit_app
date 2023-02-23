@@ -1,11 +1,8 @@
 
 import streamlit
 import pandas
-import snowflake.connector
-
 
 streamlit.title('My parents new healthy diner')
-
 
 streamlit.header('Breakfast Menu')
 streamlit.text('🥣  Omega 3 & Blueberry Oatmeal')
@@ -13,10 +10,7 @@ streamlit.text('🥗 Kale ,Spinach & Rocket Smoothy')
 streamlit.text('🍔 Burger, Pizza & pastas')
 streamlit.text('🥑🍞 Avocado Toast')
 
-
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
-
-
 
 #adding the table
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
@@ -29,8 +23,6 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)
 
-
-
 #TO GET FUTIVICE API RESPONSE I.E BY REQUESTS
 streamlit.header('Fruityvice Fruit Advice!')
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
@@ -39,11 +31,11 @@ streamlit.write('The user entered ', fruit_choice)
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+fruit_choice)
 
-
 # normalizes the json format to normal form
 fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # displays the data on frame in table format
 streamlit.dataframe(fruityvice_normalized)
 
+import snowflake.connector
 
 
