@@ -29,3 +29,7 @@ streamlit.dataframe(fruits_to_show)
 
 
 
+#TO GET FUTIVICE API RESPONSE I.E BY REQUESTS
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
